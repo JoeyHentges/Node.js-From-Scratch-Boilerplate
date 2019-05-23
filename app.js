@@ -1,12 +1,9 @@
 // Requirements
 const express = require('express');
-const chalk = require('chalk');
-const debug = require('debug')('app');
 const morgan = require('morgan');
 const path = require('path');
 
 const app = express();
-const port = process.env.PORT || 3000;
 
 app.use(morgan('tiny'));
 
@@ -23,7 +20,5 @@ app.set('view engine', 'ejs');
 // Add Routes to the app
 app.use('/', require('./src/routes/routes').router);
 
-// Start up the server!
-app.listen(port, () => {
-  debug(`listening on port ${chalk.green(port)}`);
-});
+// Export app to be used in Server.js
+module.exports.app = app;
