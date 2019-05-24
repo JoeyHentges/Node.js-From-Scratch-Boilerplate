@@ -7,5 +7,5 @@ const port = process.env.PORT || 3000;
 
 // Start up the server!
 app.listen(port, () => {
-  debug(`listening on port ${chalk.green(port)}`);
+  debug(`Started server on => ${chalk.blue(`http://localhost:${process.env.PORT}`)}`);
 });
