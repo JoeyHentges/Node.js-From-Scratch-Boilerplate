@@ -7,10 +7,14 @@ A from scratch starter template with many useful packages ready to be installed.
 * [x] **[Node.JS](https://nodejs.org)** v10.x.x
 * [x] **[Express](https://github.com/expressjs/express)**
 * [x] [MongoDB](https://www.mongodb.com/) with [Mongoose](https://github.com/Automattic/mongoose)
-* [x] **[ESLint](https://eslint.org/)** v5.x.x
+* [x] **[GraphQL](http://graphql.org/)** with [Apollo stack](http://www.apollostack.com/)
+* [x] [Cluster](https://nodejs.org/api/cluster.html)
 
 **Client-side**
 * [x] **[EJS](https://ejs.co/)**
+
+**Debugging Tools**
+* [x] [ESLint](https://eslint.org/) v5.x.x
 
 ## Usage
 
@@ -49,7 +53,13 @@ $ npm run cluster
 |   +---db
 |       +---db_config.js
 |       +---db_connection.js
-|                   
+|
++---controllers
+|   +---resolvers
+|   +---typeDefs
+|
++---models
+|
 +---public
 |   +---css
 |   +---img
@@ -73,10 +83,5 @@ $ npm run cluster
 ```
 
 ### How to connect to the Database(s) and make a save.
-```
-const { db1, db2 } = require('./configs/db/db_connection');
 
-const Cat = db1().model('Cat', { name: String });
-const kitty = new Cat({ name: 'Zildjian' });
-kitty.save().then(() => console.log('meow'));
-```
+View controllers folder for an example of Querying and Mutations.
