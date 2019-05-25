@@ -1,7 +1,12 @@
 // Requirements
+const { ApolloServer } = require('apollo-server-express');
 const express = require('express');
 const morgan = require('morgan');
 const path = require('path');
+
+// Import GraphQL Resolvers and TypeDefs
+const { resolvers } = require('./controllers/resolvers/resolvers');
+const { typeDefs } = require('./controllers/typeDefs/typeDefs');
 
 const app = express();
 
@@ -19,6 +24,12 @@ app.set('view engine', 'ejs');
 
 // Add Routes to the app
 app.use('/', require('./src/routes/routes').router);
+
+const server = new ApolloServer({
+  typeDefs,
+  resolvers,
+});
+server.applyMiddleware({ app }); // app is from an existing express app
 
 // Export app to be used in Server.js
 module.exports.app = app;
