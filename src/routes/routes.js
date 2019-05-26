@@ -1,14 +1,21 @@
 const express = require('express');
+const { graphql } = require('graphql');
+const { resolvers } = require('../../controllers/resolvers/resolvers');
+const { schema } = require('../../controllers//typeDefs/typeDefs');
 
 const router = express.Router();
 
 router.get('/', (req, res) => {
-  res.render(
-    'index',
-    {
-      title: 'hello'
-    }
-  );
+  graphql(schema, '{ cats {id name} }', resolvers.Query).then((response) => {
+    console.log(response.data);
+    res.render(
+      'index',
+      {
+        title: 'hello',
+        cats: response.data
+      }
+    );
+  });
 });
 
 // Complete Example - Bringing in routes from other files.

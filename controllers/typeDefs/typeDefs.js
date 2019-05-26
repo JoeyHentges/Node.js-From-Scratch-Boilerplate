@@ -1,6 +1,7 @@
 const { gql } = require('apollo-server-express');
+const { buildSchema } = require('graphql');
 
-module.exports.typeDefs = gql`
+const defs = `
     type Query {
         hello: String!
         cats: [Cat!]!
@@ -16,3 +17,7 @@ module.exports.typeDefs = gql`
         createCat(name: String!): Cat!
     }
 `;
+
+module.exports.typeDefs = gql`${defs}`;
+
+module.exports.schema = buildSchema(`${defs}`);
