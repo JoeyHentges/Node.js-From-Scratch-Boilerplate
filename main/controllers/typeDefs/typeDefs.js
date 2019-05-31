@@ -1,4 +1,3 @@
-const { gql } = require('apollo-server-express');
 const { buildSchema } = require('graphql');
 
 const defs = `
@@ -12,12 +11,6 @@ const defs = `
         id: ID!
         name: String!
     }
-
-    type Mutation {
-        createCat(name: String!): Cat!
-    }
 `;
-
-module.exports.typeDefs = gql`${defs}`;
 
 module.exports.schema = buildSchema(`${defs}`);

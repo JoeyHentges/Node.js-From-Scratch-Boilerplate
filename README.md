@@ -7,7 +7,7 @@ A from scratch starter template with many useful packages ready to be installed.
 * [x] **[Node.JS](https://nodejs.org)** v10.x.x
 * [x] **[Express](https://github.com/expressjs/express)**
 * [x] [MongoDB](https://www.mongodb.com/) with [Mongoose](https://github.com/Automattic/mongoose)
-* [x] **[GraphQL](http://graphql.org/)** with [Apollo stack](http://www.apollostack.com/)
+* [x] **[GraphQL](http://graphql.org/)**
 * [x] [Cluster](https://nodejs.org/api/cluster.html)
 
 **Client-side**
