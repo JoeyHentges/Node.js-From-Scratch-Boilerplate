@@ -4,10 +4,10 @@ const resolvers = {
   Query: {
     hello: () => 'hello',
     cats: () => Cat.find(),
-    cat: (_, { id }) => Cat.findById(id)
+    cat: ({ id }) => Cat.findById(id)
   },
   Mutation: {
-    createCat: async (_, { name }) => {
+    createCat: async ({ name }) => {
       const kitty = new Cat({ name });
       await kitty.save();
       return kitty;
