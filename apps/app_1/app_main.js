@@ -1,7 +1,24 @@
-const { router } = require('./routes/routes');
+const { routes } = require('./routes/routes');
 
-const contents = {
-  routes: router,
+const config = {
+  featuredCats: [
+    {
+      id: '5cf75f62b769961f58dc2d44',
+      title: 'Jimmy'
+    },
+    {
+      id: '5cf75f62b769961f58dc2d44',
+      title: 'Bob'
+    }
+  ]
 };
 
-module.exports.contents = contents;
+const contents = {
+  name: 'App_1',
+  url: '/app_1',
+  config,
+  routes,
+  //tasks
+};
+
+module.exports = contents;

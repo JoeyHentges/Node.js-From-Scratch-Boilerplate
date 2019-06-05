@@ -37,4 +37,4 @@ router.get('/3', (req, res) => {
   });
 });
 
-module.exports.router = router;
+module.exports.routes = router;

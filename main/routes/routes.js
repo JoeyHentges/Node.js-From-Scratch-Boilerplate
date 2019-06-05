@@ -6,7 +6,7 @@ const { schema } = require('../controllers//typeDefs/typeDefs');
 const router = express.Router();
 
 // Routes from other files Bringing in routes from 'apps'.
-router.use('/', require('../../apps/apps').router);
+router.use('/', require('../../apps/_/apps').router);
 
 router.get('/', (req, res) => {
   graphql(schema, '{ cats {id name} }', resolvers.Query).then((response) => {
