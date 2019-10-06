@@ -1,12 +1,14 @@
 // Requirements
 const express = require('express');
-const session = require('express-session');
 const morgan = require('morgan');
 const path = require('path');
+const bodyParser = require('body-parser');
 
 const app = express();
 
 app.use(morgan('tiny'));
+app.use(bodyParser.json());
+app.use(bodyParser.urlencoded({ extended: true }));
 
 // Static Files
 app.use(express.static(path.join(__dirname, 'public')));

@@ -9,7 +9,7 @@ const defs = `
     type Query {
         hello: String!
         cats: [Cat!]!
-        cat(id: ID): Cat!
+        cat(id: ID!): Cat!
     }
 
     type Mutation {
